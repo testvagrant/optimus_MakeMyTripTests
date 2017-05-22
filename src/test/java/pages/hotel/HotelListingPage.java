@@ -38,7 +38,7 @@ public class HotelListingPage extends BasePage {
     @FindBy(id = "com.makemytrip:id/btnShowAllHotels")
     private WebElement selectRoomButton;
 
-    private By continueMatchMakerButton= By.id("com.makemytrip:id/matchmakerContinueBtn");
+    private By continueMatchMakerButton = By.id("com.makemytrip:id/matchmakerContinueBtn");
     private By matchMakerButton = By.id("com.makemytrip:id/btn_match_maker_give_try");
     private By closeHElper = By.id("com.makemytrip:id/close_helper");
 
@@ -57,18 +57,10 @@ public class HotelListingPage extends BasePage {
     @FindBy(id = "com.makemytrip:id/tvSkipMatchmaker")
     private WebElement skipListEle;
 
-        public void hotelDetails() {
-            for(int i=0;i<details.size();i++){
-                details.get(i).click();
-            }
-//        waitForElementToBeClickable(hotelImage);
-//        swipeRightToLeft();
-//        waitForElementToBeClickable(photoText);
-//        swipeRightToLeft();
-//        waitForElementToBeClickable(reviews);
-//        swipeRightToLeft();
-//        waitForElementToBeClickable(nearByPlaces);
-//        waitForElementToBeClickable(selectRoomButton);
+    public void hotelDetails() {
+        for (int i = 0; i < details.size(); i++) {
+            details.get(i).click();
+        }
         selectRoomButton.click();
     }
 

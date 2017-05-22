@@ -44,9 +44,12 @@ public class BookingPage extends BasePage {
         lastName.click();
         lastName.sendKeys(lName);
         navigateBack();
-        email.click();
-        email.sendKeys(emailId);
-        navigateBack();
+        if(email.getAttribute("value").isEmpty()) {
+            email.click();
+            email.sendKeys(emailId);
+            navigateBack();
+        }
+        waitForElementToBeClickable(phoneNumber);
         phoneNumber.click();
         phoneNumber.sendKeys(number);
         scrollDownTo("I agree to the Terms & Conditions and Cancellation & Hotel Booking Policies");
