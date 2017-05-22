@@ -38,6 +38,7 @@ public class HomePage extends BasePage {
 
     public void clickHotels(){
         skipReferAFriend();
+        skipUpdate();
         waitForElementToBeClickable(hotels);
         hotels.click();
     }

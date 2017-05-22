@@ -51,18 +51,24 @@ public class HotelListingPage extends BasePage {
     @FindBy(id = "android.widget.imageView")
     private WebElement imageView;
 
+    @FindBy(className = "android.support.v7.app.a$c")
+    private List<WebElement> details;
+
     @FindBy(id = "com.makemytrip:id/tvSkipMatchmaker")
     private WebElement skipListEle;
 
         public void hotelDetails() {
-        waitForElementToBeClickable(hotelImage);
-        swipeRightToLeft();
-        waitForElementToBeClickable(photoText);
-        swipeRightToLeft();
-        waitForElementToBeClickable(reviews);
-        swipeRightToLeft();
-        waitForElementToBeClickable(nearByPlaces);
-        waitForElementToBeClickable(selectRoomButton);
+            for(int i=0;i<details.size();i++){
+                details.get(i).click();
+            }
+//        waitForElementToBeClickable(hotelImage);
+//        swipeRightToLeft();
+//        waitForElementToBeClickable(photoText);
+//        swipeRightToLeft();
+//        waitForElementToBeClickable(reviews);
+//        swipeRightToLeft();
+//        waitForElementToBeClickable(nearByPlaces);
+//        waitForElementToBeClickable(selectRoomButton);
         selectRoomButton.click();
     }
 
