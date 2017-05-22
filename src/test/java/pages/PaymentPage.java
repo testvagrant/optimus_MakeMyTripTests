@@ -38,36 +38,6 @@ public class PaymentPage extends BasePage {
         waitForElementToBeClickable(paymentHeader);
         waitForElementToBeClickable(paymentOptions);
         paymentModeNames.size();
-        /*try {
-            switch (paymentMode) {
-                case "Credit Card":
-                    paymentModeNames.get(0).click();
-                    //TODO
-                    break;
-                case "Debit Card":
-                    paymentModeNames.get(1).click();
-                    //TODO
-                    break;
-                case "Net Banking":
-                    paymentModeNames.get(2).click();
-                    //TODO
-                    break;
-                case "Mobile Wallet":
-                    paymentModeNames.get(3).click();
-                    //TODO
-                    break;
-                case "Gift Card":
-                    paymentModeNames.get(4).click();
-                    //TODO
-                    break;
-                case "EMI":
-                    paymentModeNames.get(5).click();
-                    //TODO
-                    break;
-            }
-        } catch (Exception e) {
-            throw new NoPaymentModeFoundException("Selected PaymentMode is not avilable for this transaction");
-        }*/
         paymentModeNames.get(3).click();
         waitForElementToBeClickable(mobileWallets);
         mobileWallets.get(0).click();

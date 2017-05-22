@@ -38,6 +38,7 @@ public class HotelListingPage extends BasePage {
     @FindBy(id = "com.makemytrip:id/btnShowAllHotels")
     private WebElement selectRoomButton;
 
+    private By skipList = By.id("com.makemytrip:id/tvSkipMatchmaker");
     private By continueMatchMakerButton = By.id("com.makemytrip:id/matchmakerContinueBtn");
     private By matchMakerButton = By.id("com.makemytrip:id/btn_match_maker_give_try");
     private By closeHElper = By.id("com.makemytrip:id/close_helper");
@@ -69,14 +70,15 @@ public class HotelListingPage extends BasePage {
         if (isElementPresent(matchMakerButton)) {
             waitForElementToBeClickable(matchMakerButtonEle);
             navigateBack();
+            waitForElementToBeInvisible(matchMakerButton);
+
         }
         if (isElementPresent(closeHElper)) {
             waitForElementToBeClickable(helperEle);
             helperEle.click();
         }
-        waitForElementToBeVisible(continueMatchMakerButton);
-        if (isElementPresent(continueMatchMakerButton)) {
-            waitForElementToBeClickable(continueMatchMakerButton);
+        if (isElementPresent(skipList)) {
+            waitForElementToBeClickable(skipList);
             skipListEle.click();
         }
         waitForElementToBeClickable(sortAndFilter);

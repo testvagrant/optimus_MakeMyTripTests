@@ -24,6 +24,7 @@ public class BookingPage extends BasePage {
 
     @FindBy(id = "com.makemytrip:id/etGuestInfoEmail")
     private WebElement email;
+    private By emailBy= By.id("com.makemytrip:id/etGuestInfoEmail");
 
     @FindBy(id = "com.makemytrip:id/etGuestInfoPhone")
     private WebElement phoneNumber;
@@ -44,7 +45,8 @@ public class BookingPage extends BasePage {
         lastName.click();
         lastName.sendKeys(lName);
         navigateBack();
-        if(email.getAttribute("value").isEmpty()) {
+        waitForElementToBeClickable(email);
+        if(email.getAttribute("text").isEmpty()) {
             email.click();
             email.sendKeys(emailId);
             navigateBack();
